@@ -1,6 +1,6 @@
-# Moaz protocol: native Matlab + Letswave 6, subj04 S1 pilot
+# Protocol: native Matlab + Letswave 6
 
-This is an independent **diagnose-first** branch. It never writes into preprocessing_v2_2 or any v2 output. It stops after ICA fitting and diagnostics. It does not yet produce reviewed/final cleaned epochs.
+This is an independent **diagnose-first** branch.  It stops after ICA fitting and diagnostics. It does not yet produce reviewed/final cleaned epochs.
 
 ## Cluster commands
 
