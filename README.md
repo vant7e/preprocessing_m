@@ -6,13 +6,13 @@ This is an independent **diagnose-first** branch.  It stops after ICA fitting an
 
 Copy/extract this package into:
 
-`/home/vant7ee/scratch/FacerecognitionData/preprocessing_moaz_native`
+`/YOUR_PATH`
 
 Then on the login node:
 
 ```bash
-cd /home/vant7ee/scratch/FacerecognitionData/preprocessing_moaz_native
-mkdir -p /home/vant7ee/scratch/FacerecognitionData/logs
+cd ~/
+mkdir -p ~/logs
 bash setup_letswave.sh
 sbatch run_one.sbatch
 ```
@@ -31,7 +31,7 @@ Do not copy the literal placeholder. Environment overrides available: `MOAZ_SCRI
 
 Output by default:
 
-`/home/vant7ee/scratch/FacerecognitionData/preprocessed_moaz_native_JOBID/subj04/S1`
+`~/preprocessed_m_JOBID/subjxx/S*`
 
 Every output directory must be new; an existing directory causes an error, including an incomplete previous run. An 8-hour request is a wall-time limit, not a predicted runtime. The job exits as soon as it finishes. Retaining intermediate native datasets requires several GB of disk space.
 
