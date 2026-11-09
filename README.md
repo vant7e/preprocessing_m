@@ -80,7 +80,3 @@ Sources: [official Letswave repository](https://github.com/NOCIONS/letswave6/tre
 - `ica_review_template.json`: intentionally `review_confirmed: false` and no exclusions. **Numbers are native ONE-BASED**: ICA1 is component 1. Do not transfer a v2/MNE index [0] without reviewing this new decomposition.
 
 After review, the remaining Moaz steps are ICA application using the saved matrix, DC + linear detrend, all-scalp average reference, −0.1…0 baseline, and the final identity/race segmentation/ERP operations. They are deliberately not executed in this pilot. A separate reviewed application step is needed; editing the template alone does not launch cleaning.
-
-## Verification
-
-The package has passed local Matlab static syntax/lint and Bash syntax checks. The development machine has no Matlab or cluster BDF, so no real-data execution is claimed. The batch job first runs `moaz_selftest.m` on small synthetic data to check native filter-order semantics, inclusive segmentation, DC, the exact 700-uV criterion and single-precision storage, then proceeds to the BDF. Source paths and SHA-256 values for critical routines are checked against `source_lock.json`; a mismatch stops the job.
