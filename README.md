@@ -17,7 +17,7 @@ bash setup_letswave.sh
 sbatch run_one.sbatch
 ```
 
-`setup_letswave.sh` downloads the official Letswave repository into a **separate** `letswave6_moaz_pin` folder and checks out commit `7932ccfd570dc55ba1c5ae8e062147afce615496`. Internet access and git are needed for this one-time setup. It refuses a modified existing checkout. No original data are downloaded or modified.
+`setup_letswave.sh` downloads the official Letswave repository into a **separate** `letswave6_moaz_pin` folder and checks out commit first. Internet access and git are needed for this one-time setup. It refuses a modified existing checkout. No original data are downloaded or modified.
 
 The job loads `matlab` and requires its Signal Processing Toolbox (`butter`, `filtfilt`). Bundled Letswave import, coordinates, ICA and plotting dependencies come from the pinned checkout. The Python `rsa` environment is not used.
 
