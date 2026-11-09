@@ -59,8 +59,9 @@ Two source-version details are deliberately disclosed:
 
 - 291.1 s gives **149044 samples** in this native version (`round(duration * 512) + 1`), while original eeg preprocessing protcol (Moaz et al, 2025) also wrote 149043. The pilot follows the written duration. To choose the sample-count interpretation, an explicit protocol revision is needed; it is not silently substituted:
 
-```Picked up JAVA_TOOL_OPTIONS: -Xmx2g
-{Error using assert
+```
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g
+Error using assert
 Native segmentation would exceed data: event 11 latency 290.716796875. Audit
 before proceeding.
 Error in m_diagnose>check_bounds (line 202)
@@ -69,7 +70,8 @@ Error in moaz_diagnose (line 112)
         check_bounds(bh,fi,-0.1,1);
 Error in M_entrypoint (line 8)
 m_diagnose(path);
-}```
+}
+```
 
 - The pinned `RLW_ICA_compute` initializes a full zero block and then appends the real epochs. Thus its ICA input includes a zero prefix equal in length to the real retained data. We call the native code unchanged and record this behavior; we do not assert Moaz's historical release had it. Native `runica` also reseeds from the clock, so a second fit need not have identical component numbers/signs. Review and reuse the specific saved matrix.
 
